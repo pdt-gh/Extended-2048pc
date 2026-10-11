@@ -6244,7 +6244,7 @@ function loadMode(mode) {
                 [["@This 0", "=", 4], ["@TextE", ["@Superscript", 16], "O"], "#f59563", "#f9f6f2", "none", 3, 0, ["Innerscript", ["@This 1", "@if", ["@This 1", "=", Infinity], "2nd", ""], "bottom-center", 4, 0]],
                 [["@This 0", "=", 5], ["@TextE", ["@Superscript", 32], "P"], "#f67c5f", "#f9f6f2", "none", 3, 0, ["Innerscript", ["@This 1", "@if", ["@This 1", "=", Infinity], "2nd", ""], "bottom-center", 4, 0]],
                 [["@This 0", "=", 6], ["@TextE", ["@Superscript", 64], "Ni"], "#f65e3b", "#f9f6f2", "none", 3, 0, ["Innerscript", ["@This 1", "@if", ["@This 1", "=", Infinity], "2nd", ""], "bottom-center", 4, 0]],
-                [["@This 0", "=", 7], ["@TextE", ["@Superscript", 128], "Sn"], "#edcf72", "#f9f6f2", "none", 3, 0, ["Innerscript", ["@This 1", "@if", ["@This 1", "=", Infinity], "2nd", ""], "bottom-center", 4, 0], ["Innerscript", ["@This 1", "@if", ["@This 1", "=", Infinity], "2nd", ""], "bottom-center", 4, 0]],
+                [["@This 0", "=", 7], ["@TextE", ["@Superscript", 128], "Sn"], "#edcf72", "#f9f6f2", "none", 3, 0, ["Innerscript", ["@This 1", "@if", ["@This 1", "=", Infinity], "2nd", ""], "bottom-center", 4, 0]],
                 [["@This 0", "=", 8], ["@TextE", ["@Superscript", 256], "No"], "#edcc61", "#f9f6f2", "none", 3, 0, ["Innerscript", ["@This 1", "@if", ["@This 1", "=", Infinity], "2nd", ""], "bottom-center", 4, 0]],
                 [["@This 0", "=", 9], ["@TextE", ["@Superscript", 512], "Uss"], "#edc850", "#f9f6f2", "none", 3, 0, ["Innerscript", ["@This 1", "@if", ["@This 1", "=", Infinity], "2nd", ""], "bottom-center", 4, 0]],
                 [["@This 0", "=", 10], ["@TextE", ["@Superscript", 1024], "Bep"], "#edc53f", "#f9f6f2", "none", 3, 0, ["Innerscript", ["@This 1", "@if", ["@This 1", "=", Infinity], "2nd", ""], "bottom-center", 4, 0]],
@@ -26664,7 +26664,7 @@ function CalcArrayString(str) {
             for (let t = 1; t < (split.length == 2 ? Infinity : addInfo[0]); t++) {
                 if (!(!(Number.isNaN(nextv)) && nextv % 1 == 0 && nextv >= 0 && nextv < height) || !(!(Number.isNaN(nexth)) && nexth % 1 == 0 && nexth >= 0 && nexth < width)) break;
                 tile = compendiumStructuredClone(gri[nextv][nexth]);
-                result.unshift(tile);
+                result.push(tile);
                 nextv += vdir;
                 nexth += hdir;
                 while (gri[nextv] !== undefined && gri[nextv][nexth] == "@Slippery") {
