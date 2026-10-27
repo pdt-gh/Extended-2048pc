@@ -5615,6 +5615,7 @@ function loadMode(mode) {
     }
     else if (mode == 16) { // 2197
         // width = 4; height = 4;
+        mode_vars = [0];
         TileNumAmount = 2;
         TileTypes = [
         [[0, 1], 1, "#305300", "#f7eaf4"], [[0, 2], 2, "#528d00", "#f7eaf4"], [[0, 3], 3, "#72c400", "#f7eaf4"],
@@ -5659,6 +5660,8 @@ function loadMode(mode) {
         ["p", "Spawning tiles: 1 (85%), 2 (8%), 3 (5%), 4 (2%)"]);
         displayRules("gm_rules_text", ["h2", "Powers of 13"], ["h1", "2197"], ["p","Merges occur between two equal tiles that are a power of 13, between a tile that's a power of 13 and a tile that's double or triple that power of 13, between a tile that's double a power of 13 and a tile that's quadruple that power of 13, between a tile that's triple a power of 13 and a tile that's sextuple that power of 13, or between a tile that's quadruple a power of 13 and a tile that's 9 times that power of 13. Get to the 2197 tile to win!"],
         ["p", "Spawning tiles: 1 (85%), 2 (8%), 3 (5%), 4 (2%)"]);
+        document.getElementById("mode_vars_line").style.setProperty("display", "block");
+        document.getElementById("2197_vars").style.setProperty("display", "flex");
     }
     else if (mode == 17) { // 3375
         // width = 4; height = 4;
@@ -10515,6 +10518,32 @@ function gmDisplayVars() {
             ["p", "Spawning tiles: 1 (80%), 2 (10%), 3 (4%), 4 (4%), 5 (2%)"]);
             displayRules("gm_rules_text", ["h2", "Powers of 5"], ["h1", "3125"], ["p","Merges occur between two equal tiles that are either a power of five or double a power of five, between a tile that's a power of five and a tile that's double that power of five, between a tile that's double a power of five and a tile that's triple that power of five, or between a tile that's a power of five and a tile that's quadruple that power of 5. Get to the 3125 tile to win!"],
             ["p", "Spawning tiles: 1 (80%), 2 (10%), 3 (4%), 4 (4%), 5 (2%)"]);
+        }
+    }
+      else if (gamemode == 16) { // 2197
+        if (mode_vars[0]==0) {
+            document.getElementById("2197-mergeStyle_text").innerHTML = "There are 2745-style merges.";
+            document.getElementById("2197-mergeStyle_text").style.setProperty("color", "#804040");
+            displayRules("rules_text", ["h2", "Powers of 13"], ["h1", "3125"], ["p","Merges occur between two equal tiles that are a power of 13, between a tile that's a power of 13 and a tile that's double or triple that power of 13, between a tile that's double a power of 13 and a tile that's quadruple that power of 13, between a tile that's triple a power of 13 and a tile that's sextuple that power of 13, or between a tile that's quadruple a power of 13 and a tile that's 9 times that power of 13. Get to the 2197 tile to win!"],
+            ["p", "Spawning tiles: 1 (80%), 2 (8%), 3 (5%), 4 (2%)"]);
+            displayRules("gm_rules_text", ["h2", "Powers of 13"], ["h1", "3125"], ["p","Merges occur between two equal tiles that are a power of 13, between a tile that's a power of 13 and a tile that's double or triple that power of 13, between a tile that's double a power of 13 and a tile that's quadruple that power of 13, between a tile that's triple a power of 13 and a tile that's sextuple that power of 13, or between a tile that's quadruple a power of 13 and a tile that's 9 times that power of 13. Get to the 2197 tile to win!"],
+            ["p", "Spawning tiles: 1 (80%), 2 (8%), 3 (5%), 4 (2%)"]);
+        }
+        else if (mode_vars[0]==1) {
+            document.getElementById("2197-mergeStyle_text").innerHTML = "There are 2584-style merges.";
+            document.getElementById("2197-mergeStyle_text").style.setProperty("color", "#408040");
+            displayRules("rules_text", ["h2", "Powers of 13"], ["h1", "3125"], ["p","If n's a power of 13, then the following merges are valid: n+n, 2n+n, 3n+2n, 5n+3n, and 8n+5n. Get to the 2197 tile to win!"],
+            ["p", "Spawning tiles: 1 (80%), 2 (8%), 3 (5%), 5 (2%)"]);
+            displayRules("gm_rules_text", ["h2", "Powers of 13"], ["h1", "3125"], ["p","If n's a power of 13, then the following merges are valid: n+n, 2n+n, 3n+2n, 5n+3n, and 8n+5n. Get to the 2197 tile to win!"],
+            ["p", "Spawning tiles: 1 (80%), 2 (8%), 3 (5%), 5 (2%)"]);
+        }
+        else {
+            document.getElementById("2197-mergeStyle_text").innerHTML = "There are 1705-style merges.";
+            document.getElementById("2197-mergeStyle_text").style.setProperty("color", "#404080");
+            displayRules("rules_text", ["h2", "Powers of 13"], ["h1", "3125"], ["p","If n's a power of 13, then the following merges are valid: n+n, 2n+n+n, 4n+2n+n, and 7n+4n+2n. Get to the 2197 tile to win!"],
+            ["p", "Spawning tiles: 1 (85%), 2 (12%), 4 (3%)"]);
+            displayRules("gm_rules_text", ["h2", "Powers of 13"], ["h1", "3125"], ["p","If n's a power of 13, then the following merges are valid: n+n, 2n+n+n, 4n+2n+n, and 7n+4n+2n. Get to the 2197 tile to win!"],
+            ["p", "Spawning tiles: 1 (85%), 2 (12%), 4 (3%)"]);
         }
     }
     else if (gamemode == 25) { // XXXX
