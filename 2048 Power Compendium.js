@@ -376,6 +376,10 @@ document.getElementById("3125_3-1_button").addEventListener("click", function(){
     mode_vars[0] = !(mode_vars[0]);
     gmDisplayVars();
 });
+document.getElementById("2197_mergestyle_button").addEventListener("click", function(){
+    mode_vars[0] = (mode_vars[0]+1)%3
+    gmDisplayVars();
+});
 document.getElementById("XXXX_min_plus").addEventListener("click", function(){
     mode_vars[0]++;
     if (mode_vars[1] < mode_vars[0]) mode_vars[1] = mode_vars[0];
@@ -21140,6 +21144,28 @@ function loadModifiers() {
                     [2, [["@Next 1 0", "=", "@This 0"], "&&", ["@Next 1 1", "+", "@This 1", "=", 5]], true, [[["@This 0", "+", 1], 1]], [5, "^", ["@This 0", "+", 1]], [false, true]]
                 ]
                 startTileSpawns = [[[0, 1], 80], [[0, 2], 10], [[0, 3], 4], [[0, 4], 4], [[1, 1], 2]];
+            }
+        }
+          else if (gamemode == 16) { // 2197
+            if ((mode_vars[0])==1) {
+                MergeRules = [
+                  [2, [["@Next 1 0", "=", "@This 0"], "&&", ["@Next 1 1", "=", 1], "&&", ["@This 1", "=", 1]], false, [["@This 0", 2]], [13, "^", "@This 0", "*", 2], [false, true]],
+                  [2, [["@Next 1 0", "=", "@This 0"], "&&", ["@Next 1 1", "=", 2], "&&", ["@This 1", "=", 1]], false, [["@This 0", 3]], [13, "^", "@This 0", "*", 3], [false, true]],
+                  [2, [["@Next 1 0", "=", "@This 0"], "&&", ["@Next 1 1", "=", 3], "&&", ["@This 1", "=", 2]], false, [["@This 0", 5]], [13, "^", "@This 0", "*", 5], [false, true]],
+                  [2, [["@Next 1 0", "=", "@This 0"], "&&", ["@Next 1 1", "=", 5], "&&", ["@This 1", "=", 3]], false, [["@This 0", 8]], [13, "^", "@This 0", "*", 8], [false, true]],
+                  [2, [["@Next 1 0", "=", "@This 0"], "&&", ["@Next 1 1", "=", 8], "&&", ["@This 1", "=", 5]], false, [[["@This 0","+",1], 1]], [13, "^", "@This 0", "*", 13], [false, true]]
+                ]
+                startTileSpawns = [[[0, 1], 85], [[0, 2], 8], [[0, 3], 5], [[0, 4], 2];
+            }
+            else if ((mode_vars[0])==2) {
+                MergeRules = [
+                                    [2, [["@Next 1 0", "=", "@This 0"], "&&", ["@Next 1 1", "=", 1], "&&", ["@This 1", "=", 1]], false, [["@This 0", 2]], [13, "^", "@This 0", "*", 2], [false, true]],
+                 [3, [["@Next 1 0", "=", "@This 0"], "&&", ["@Next 2 0", "=", "@This 0"], "&&", ["@Next 2 1", "=", 2], "&&", ["@Next 1 1", "=", 1], "&&", ["@This 1", "=", 1]], false, ["@This 0", 4]], [13, "^", "@This 0", "*", 4], [false, true, true]],
+                 [3, [["@Next 1 0", "=", "@This 0"], "&&", ["@Next 2 0", "=", "@This 0"], "&&", ["@Next 2 1", "=", 4], "&&", ["@Next 1 1", "=", 2], "&&", ["@This 1", "=", 1]], false, ["@This 0", 7]], [13, "^", "@This 0", "*", 7], [false, true, true]],
+                               [3, [["@Next 1 0", "=", "@This 0"], "&&", ["@Next 2 0", "=", "@This 0"], "&&", ["@Next 2 1", "=", 7], "&&", ["@Next 1 1", "=", 4], "&&", ["@This 1", "=", 2]], false, [["@This 0","+",1], 1]], [13, "^", "@This 0", "*", 13], [false, true, true]],
+
+                ]
+                startTileSpawns = [[[0, 1], 85], [[0, 2], 10], [[0, 3], 5];
             }
         }
         else if (gamemode == 25) { // XXXX
