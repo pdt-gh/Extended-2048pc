@@ -376,7 +376,7 @@ document.getElementById("3125_3-1_button").addEventListener("click", function(){
     mode_vars[0] = !(mode_vars[0]);
     gmDisplayVars();
 });
-document.getElementById("2197_mergestyle_button").addEventListener("click", function(){
+document.getElementById("2197-mergeStyle_button").addEventListener("click", function(){
     mode_vars[0] = (mode_vars[0]+1)%3
     gmDisplayVars();
 });
